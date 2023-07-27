@@ -1,5 +1,5 @@
-import Upload from "../Upload";
-import ProjectsList from "../Projects";
+import Upload from "../common/Upload";
+import ProjectsList from "../Projects/Projects";
 import useManageProjects from "../hooks/use-projects";
 
 const ProjectsPage = () => {
