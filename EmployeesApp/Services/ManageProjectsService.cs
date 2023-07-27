@@ -17,13 +17,8 @@ namespace EmployeesApp.Services
             "yyyy-MM-d",
             "yyyy-M-d",
             "yyyy-M-dd",
-            "yyyy-MM-ddTHH:mm:ss",
-            "yyyy-MM-ddTHH:mm:ssZ",
-            "yyyy-MM-ddTHH:mm:ss.fffffff",
             "MM/dd/yyyy",
             "dd/MM/yyyy",
-            "dddd, MMMM dd, yyyy",
-            "ddd, dd MMM yyyy HH:mm:ss GMT",
             // Add more formats here as needed
         };
 
@@ -87,7 +82,7 @@ namespace EmployeesApp.Services
                                                 {
                                                     group.Key.ProjectId,
                                                     group.Key.EmployeeId,
-                                                    TotalDays = group.Sum(c => (c.DateTo - c.DateFrom).TotalDays)
+                                                    TotalDays = group.Sum(c => (long)(Math.Floor((c.DateTo - c.DateFrom).TotalDays)))
                                                 })
                                                 .GroupBy(c => c.ProjectId)
                                                 .SelectMany(group => group.OrderByDescending(c => c.TotalDays).Take(2))
