@@ -1,0 +1,20 @@
+.upload button {
+    padding: 10px 15px;
+    background-color: #458848;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+  }
+  
+  .upload button:hover {
+    background-color: #45a049;
+  }
+  
+  .upload button:active {
+    background-color: #3e8e41;
+  }
+
+  .error {
+    color: red;
+  }
